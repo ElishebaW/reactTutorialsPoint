@@ -1,48 +1,75 @@
-import React from 'react';
+// import React, { Component } from 'react'
+// import { connect } from 'react-redux'
+// import { addTodo } from './actions/actions'
+//
+// import AddTodo from './components/AddTodo.js'
+// import TodoList from './components/TodoList.js'
+//
+// class App extends Component {
+//    render() {
+//       const { dispatch, visibleTodos } = this.props
+//
+//       return (
+//          <div>
+//             <AddTodo onAddClick = {text =>dispatch(addTodo(text))} />
+//             <TodoList todos = {visibleTodos}/>
+//          </div>
+//       )
+//    }
+// }
+// function select(state) {
+//    return {
+//       visibleTodos: state.todos
+//    }
+// }
+// export default connect(select)(App);
+//Keys
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      data: [
-        {
-          component: 'First ...',
-          id: 1
-        },
-
-        {
-          component: 'Third...',
-          id: 3
-        },
-        {
-          component: 'Second ...',
-          id: 2
-        }
-      ]
-    }
-  }
-  render() {
-    return (
-      <div>
-        <div>
-          {this.state.data.map((dynamicComponent, i) => <Content key= {i} componentData = {dynamicComponent}/>)}
-        </div>
-      </div>
-    );
-  }
-}
-
-class Content extends React.Component {
-  render() {
-    return (
-      <div>
-      <div>{this.props.componentData.component}</div>
-      <div>{this.props.componentData.id}</div>
-      </div>
-    );
-  }
-}
-export default App;
+// import React from 'react';
+//
+// class App extends React.Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       data: [
+//         {
+//           component: 'First ...',
+//           id: 1
+//         },
+//
+//         {
+//           component: 'Third...',
+//           id: 3
+//         },
+//         {
+//           component: 'Second ...',
+//           id: 2
+//         }
+//       ]
+//     }
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <div>
+//           {this.state.data.map((dynamicComponent, i) => <Content key= {i} componentData = {dynamicComponent}/>)}
+//         </div>
+//       </div>
+//     );
+//   }
+// }
+//
+// class Content extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//       <div>{this.props.componentData.component}</div>
+//       <div>{this.props.componentData.id}</div>
+//       </div>
+//     );
+//   }
+// }
+// export default App;
 //refs
 // import React from 'react';
 // import ReactDOM from 'react-dom';
@@ -271,22 +298,22 @@ export default App;
 // export default App;
 
 //Force Update
-// import React from 'react';
-//
-// class App extends React.Component {
-//   constructor() {
-//     super();
-//     this.forceUpdateHandler = this.forceUpdateHander.bind(this);
-//   };
-//   forceUpdateHander() {
-//     this.forceUpdate();
-//   };
-//   render() {
-//       return (
-//         <div>
-//         <button onClick = {this.forceUpdateHandler}> FORCE UPDATE</button>
-//         <h4>Random number: {Math.random()}</h4>
-//         </div>
-//       );
-//   }
-// }
+import React from 'react';
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.forceUpdateHandler = this.forceUpdateHander.bind(this);
+  };
+  forceUpdateHander() {
+    this.forceUpdate();
+  };
+  render() {
+      return (
+        <div>
+        <button onClick = {this.forceUpdateHandler}> FORCE UPDATE</button>
+        <h4>Random number: {Math.random()}</h4>
+        </div>
+      );
+  }
+}
